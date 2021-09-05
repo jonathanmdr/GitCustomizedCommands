@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+if [[ -z "$1" ]]; then
+  echo "Inform the branch name to create a new branch"
+  exit 1
+fi
+
+git checkout -b "$1" && \
+git push origin "$1" && \
+git branch --set-upstream-to=origin/"$1"
+

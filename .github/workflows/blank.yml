@@ -19,6 +19,13 @@ jobs:
         run: sudo apt install git -y
       
       - name: Log git version
-        run: |
-          echo Hello pipeline
-          echo $(git --version)
+        run: echo $(git --version)
+      
+      - name: Test git-create-branch
+        run: ./git-create-branch my-branch && if [ $? -ne 0] then exit 1 fi
+      
+      - name: Test git-log-grap
+        run: ./git-log-graph && if [ $? -ne 0] then exit 1 fi
+        
+      - name: Test git-purge-branchs
+        run: ./git-purge-branchs && if [ $? -ne 0] then exit 1 fi

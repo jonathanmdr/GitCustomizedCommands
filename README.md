@@ -4,7 +4,7 @@
 
 Criando comandos customizados `git` para facilitar e simplificar as atividades diárias de quem gosta de trabalhar com `git` via terminal.
 
-### Como funciona:
+## Como funciona:
 
 São simples shell scripts que executam os comandos `git` internamente, reduzindo a verbosidade dos comandos de forma bem significativa.
 
@@ -13,7 +13,7 @@ São simples shell scripts que executam os comandos `git` internamente, reduzind
 É recomendado que os scripts sejam armazenados no diretório `/usr/local/bin`.
 > Os scripts podem ser armazenados em outro diretório `/bin`.
 
-### Sobre os scripts:
+## Sobre os scripts:
 
 Script | Descrição
 --|--|
@@ -21,7 +21,7 @@ Script | Descrição
 `git-purge-branches` | Deleta todos os `branches` locais que já foram mergeados no `branch` principal do repositório remoto, atualmente são considerados `branches` principais os que estão identificatos com o nome `main` ou `master`.
 `git-log-graph` | Exibe toda a árvore de `branches` com detalhamento dos `commits`, `users` e `merges` que foram realizados no repositório.
 
-#### Como executar:
+### Como executar:
 
 Criando um novo branch:
 ```sh

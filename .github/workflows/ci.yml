@@ -26,7 +26,7 @@ jobs:
         run: |
           sh ./git-create-branch $BRANCH_NAME
           
-          if [[ $? -ne 1 ]]
+          if [[ $? -ne 0 ]]
           then
             exit 1
           fi
@@ -36,7 +36,7 @@ jobs:
         run: |
           sh ./git-log-grah
           
-          if [[ $? -ne 1 ]]
+          if [[ $? -ne 0 ]]
           then
             exit 1
           fi
@@ -46,7 +46,7 @@ jobs:
         run: |
           sh ./git-purge-branchs
           
-          if [[ $? -ne 1 ]]
+          if [[ $? -ne 0 ]]
           then
             exit 1
           fi
@@ -56,7 +56,7 @@ jobs:
         run: |
           git push origin --delete $BRANCH_NAME
           
-          if [[ $? -ne 1 ]]
+          if [[ $? -ne 0 ]]
           then
             exit 1
           fi

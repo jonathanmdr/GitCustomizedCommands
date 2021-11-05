@@ -51,11 +51,6 @@ jobs:
           fi
           
       - name: Cleanup setup
+        if: always()
         shell: bash
-        run: |
-          git push origin --delete $BRANCH_NAME
-          
-          if [[ $? -ne 0 ]]
-          then
-            exit 1
-          fi
+        run: git push origin --delete $BRANCH_NAME

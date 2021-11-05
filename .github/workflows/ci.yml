@@ -34,7 +34,7 @@ jobs:
       - name: Test git-log-graph
         shell: bash
         run: |
-          sh ./git-log-grah
+          sh ./git-log-graph
           
           if [[ $? -ne 0 ]]
           then

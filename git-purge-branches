@@ -2,7 +2,7 @@
 
 BRANCH_LIST=$(git branch --merged | grep -v "(^\*|master|main)")
 
-if [[ -z "$BRANCH_LIST" ]]; then
+if [ -z "$BRANCH_LIST" ]; then
   exit 0
 fi
 

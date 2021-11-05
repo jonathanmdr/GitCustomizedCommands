@@ -18,17 +18,22 @@ São simples shell scripts que executam os comandos `git` internamente, reduzind
 Script | Descrição
 --|--|
 `git-create-branch` | Cria um novo `branch` local baseado no `branch` atual, envia para o repositório remoto e faz um `checkout` no novo branch.
-`git-purge-branchs` | Deleta todos os `branchs` locais que já foram mergeados no `branch` principal do repositório remoto, atualmente são considerados `branchs` principais os que estão identificatos com o nome `main` ou `master`.
-`git-log-graph` | Exibe toda a árvore de `branchs` com detalhamento dos `commits`, `users` e `merges` que foram realizados no repositório.
+`git-purge-branches` | Deleta todos os `branches` locais que já foram mergeados no `branch` principal do repositório remoto, atualmente são considerados `branches` principais os que estão identificatos com o nome `main` ou `master`.
+`git-log-graph` | Exibe toda a árvore de `branches` com detalhamento dos `commits`, `users` e `merges` que foram realizados no repositório.
 
 #### Como executar:
+
+Criando um novo branch:
 ```sh
-# Criando um novo branch e aplicando checkout
 git create-branch <nome-do-branch-que-deseja-criar>
+```
 
-# Deletando os branchs que já foram mergeados no branch principal
-git purge-branchs
+Deletando branches que já foram mergeados:
+```sh
+git purge-branches
+```
 
-# Exibindo a árvore do repositório
+Exibindo a árvore do repositório com detalhes:
+```sh
 git log-graph
 ```

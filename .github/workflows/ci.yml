@@ -15,11 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Update OS
-        run: sudo apt update
-      
-      - name: Install git
-        run: sudo apt install git -y
+      - name: Setup
+        run: |
+          sudo apt update && \
+          sudo apt install git -y
       
       - name: Test git-create-branch
         shell: bash
@@ -51,7 +50,7 @@ jobs:
             exit 1
           fi
           
-      - name: Cleanup
+      - name: Cleanup setup
         shell: bash
         run: |
           git push origin --delete $BRANCH_NAME

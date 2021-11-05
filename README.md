@@ -4,7 +4,7 @@
 
 Criando comandos customizados `git` para facilitar e simplificar as atividades diárias de quem gosta de trabalhar com `git` via terminal.
 
-### Como isso funciona:
+### Como funciona:
 
 São simples shell scripts que executam os comandos `git` internamente, reduzindo a verbosidade dos comandos de forma bem significativa.
 
@@ -17,9 +17,9 @@ São simples shell scripts que executam os comandos `git` internamente, reduzind
 
 Script | Descrição
 --|--|
-`git-create-branch` | Cria um novo `branch` baseado em um `branch` qualquer e faz um `checkout` para o novo branch criado.
-`git-purge-branchs` | Deleta todos os `branchs` que já foram mergeados nos branchs principais identificatos como `main` ou `master`.
-`git-log-graph` | Exibe toda a árvore de `branchs` com os `commits` e `merges` que foram realizados.
+`git-create-branch` | Cria um novo `branch` local baseado no `branch` atual, envia para o repositório remoto e faz um `checkout` no novo branch.
+`git-purge-branchs` | Deleta todos os `branchs` que já foram mergeados no `branch` principal do repositório, atualmente são considerados `branchs` principais os que estão identificatos com o nome `main` ou `master`.
+`git-log-graph` | Exibe toda a árvore de `branchs` com detalhamento dos `commits`, `users` e `merges` que foram realizados no repositório.
 
 #### Como executar:
 ```sh

@@ -1,3 +1,10 @@
 #!/bin/bash
 
-git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d
+BRANCH_LIST=$(git branch --merged | egrep -v "(^\*|master|main)")
+
+if [[ -z $BRANCH_LIST ]]
+then
+  exit 0
+fi
+
+git branch -d ${BRANCH_LIST}

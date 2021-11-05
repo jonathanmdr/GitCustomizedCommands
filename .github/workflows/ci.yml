@@ -25,8 +25,7 @@ jobs:
         run: |
           sh ./git-create-branch $BRANCH_NAME
           
-          if [[ $? -ne 0 ]]
-          then
+          if [[ $? -ne 0 ]]; then
             exit 1
           fi
       
@@ -35,8 +34,7 @@ jobs:
         run: |
           sh ./git-log-graph
           
-          if [[ $? -ne 0 ]]
-          then
+          if [[ $? -ne 0 ]]; then
             exit 1
           fi
         
@@ -45,8 +43,7 @@ jobs:
         run: |
           sh ./git-purge-branches
           
-          if [[ $? -ne 0 ]]
-          then
+          if [[ $? -ne 0 ]]; then
             exit 1
           fi
           

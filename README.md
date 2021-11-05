@@ -1,5 +1,7 @@
 # Git Customized Commands
 
+[![CI](https://github.com/jonathanmdr/GitCustomizedCommands/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jonathanmdr/GitCustomizedCommands/actions/workflows/ci.yml)
+
 Criando comandos customizados `git` para facilitar e simplificar as atividades diárias de quem gosta de trabalhar com `git` via terminal.
 
 ### Como isso funciona:

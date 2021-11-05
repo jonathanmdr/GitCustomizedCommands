@@ -54,7 +54,7 @@ jobs:
       - name: Cleanup
         shell: bash
         run: |
-          git push origin --delete $BRANCH_NAME
+          git push origin $BRANCH_NAME --delete
           
           if [[ $? -ne 0 ]]
           then

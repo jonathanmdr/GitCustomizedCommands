@@ -1,6 +1,6 @@
 # Git Customized Commands
 
-Criando comandos customizados `git` para facilitar e simplificar o as atividades diárias de quem gosta de trabalhar com `git` via terminal.
+Criando comandos customizados `git` para facilitar e simplificar as atividades diárias de quem gosta de trabalhar com `git` via terminal.
 
 ### Como isso funciona:
 
@@ -8,7 +8,8 @@ São simples shell scripts que executam os comandos `git` internamente, reduzind
 
 > :warning: Os scripts foram testados em distribuições Linux baseadas em Ubuntu e MacOS.
 
-Os scripts devem ser armazenados no diretório `/usr/local/bin` e é preciso garantir que os mesmos já tenham a permissão de execução.
+É recomendado que os scripts sejam armazenados no diretório `/usr/local/bin` e é preciso garantir que os mesmos já tenham a permissão de execução.
+> Os scripts podem ser armazenados em outro diretório `/bin`.
 
 #### Como permitir que o script seja executável:
 > :warning: Pode ser preciso utilizar `sudo`.

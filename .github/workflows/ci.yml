@@ -41,10 +41,10 @@ jobs:
             exit 1
           fi
         
-      - name: Test git-purge-branchs
+      - name: Test git-purge-branches
         shell: bash
         run: |
-          sh ./git-purge-branchs
+          sh ./git-purge-branches
           
           if [[ $? -ne 0 ]]
           then

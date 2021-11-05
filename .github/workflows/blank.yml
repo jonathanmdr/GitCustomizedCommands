@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Update OS
+        run: apt update
+      
+      - name: Install git
+        run: apt install git -y
+      
+      - name: Log git version
+        run: |
+          echo Hello pipeline
+          echo $(git --version)

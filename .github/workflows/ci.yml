@@ -49,5 +49,4 @@ jobs:
           
       - name: Cleanup setup
         if: always()
-        shell: bash
         run: git push origin --delete $BRANCH_NAME

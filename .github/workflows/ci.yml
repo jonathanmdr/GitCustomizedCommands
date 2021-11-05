@@ -19,7 +19,7 @@ jobs:
         run: sudo apt install git -y
       
       - name: Log git version
-        run: echo $(git --version) && ls -lha
+        run: echo $(git --version) && ls -lha && cd .github && ls -lha
       
       - name: Test git-create-branch
         shell: bash

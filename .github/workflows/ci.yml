@@ -24,8 +24,6 @@ jobs:
       - name: Test git-create-branch
         shell: bash
         run: |
-          git update-index --chmod +x git-create-branch
-          echo $?
           sh ./git-create-branch my-branch
       
 #       - name: Test git-log-grap

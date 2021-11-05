@@ -1,8 +1,10 @@
 #!/bin/bash
 
-BRANCH_LIST=$(git branch --merged | grep -v "(^\*|master|main)")
+set -e
 
-if [ -z "$BRANCH_LIST" ]; then
+BRANCH_LIST=$(git branch --merged | egrep -v "(^\*|master|main)")
+
+if [[ -z "$BRANCH_LIST" ]]; then
   exit 0
 fi
 

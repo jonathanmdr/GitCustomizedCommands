@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  BRANCH_NAME: my-branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,21 +21,42 @@ jobs:
       - name: Install git
         run: sudo apt install git -y
       
-      - name: Log git version
-        run: echo $(git --version) && ls -lha && cd .github && ls -lha
-      
       - name: Test git-create-branch
         shell: bash
         run: |
-          sh ./git-create-branch my-branch
+          sh ./git-create-branch $BRANCH_NAME
           
           if [[ $? -ne 1 ]]
           then
             exit 1
           fi
       
-#       - name: Test git-log-grap
-#         run: ./git-log-graph && if [ $? -ne 0] then exit 1 fi
+      - name: Test git-log-graph
+        shell: bash
+        run: |
+          sh ./git-log-grah
+          
+          if [[ $? -ne 1 ]]
+          then
+            exit 1
+          fi
         
-#       - name: Test git-purge-branchs
-#         run: ./git-purge-branchs && if [ $? -ne 0] then exit 1 fi
+      - name: Test git-purge-branchs
+        shell: bash
+        run: |
+          sh ./git-purge-branchs
+          
+          if [[ $? -ne 1 ]]
+          then
+            exit 1
+          fi
+          
+      - name: Cleanup
+        shell: bash
+        run: |
+          git push origin --delete $BRANCH_NAME
+          
+          if [[ $? -ne 1 ]]
+          then
+            exit 1
+          fi

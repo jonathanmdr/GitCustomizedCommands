@@ -15,13 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-#       - name: Setup
-#         run: |
-#           sudo apt update && \
-#           sudo apt install git -y
-      
       - name: Test git-create-branch
-        shell: bash
         run: |
           sh ./git-create-branch $BRANCH_NAME
           

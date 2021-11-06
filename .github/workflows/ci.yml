@@ -24,7 +24,6 @@ jobs:
           fi
       
       - name: Test git-log-graph
-        shell: bash
         run: |
           sh ./git-log-graph
           
@@ -33,7 +32,6 @@ jobs:
           fi
         
       - name: Test git-purge-branches
-        shell: bash
         run: |
           sh ./git-purge-branches
           
@@ -41,6 +39,6 @@ jobs:
             exit 1
           fi
           
-      - name: Cleanup setup
+      - name: Cleanup
         if: always()
         run: git push origin --delete $BRANCH_NAME

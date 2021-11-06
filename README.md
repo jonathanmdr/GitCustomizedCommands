@@ -8,7 +8,7 @@ Criando comandos customizados `git` para facilitar e simplificar as atividades d
 
 São simples shell scripts que executam os comandos `git` internamente, reduzindo a verbosidade dos comandos de forma bem significativa.
 
-> :warning: Os scripts foram testados em distribuições Linux baseadas em Ubuntu e MacOS.
+> :warning: Os scripts foram testados em MacOS e distribuições Linux baseadas em Ubuntu.
 
 É recomendado que os scripts sejam armazenados no diretório `/usr/local/bin`.
 > Os scripts podem ser armazenados em outro diretório `/bin`.

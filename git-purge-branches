@@ -1,9 +1,10 @@
 #!/bin/bash
 
-BRANCH_LIST=$(git branch --merged | egrep -v "(^\*|master|main)")
+set -e
 
-if [ -z "$BRANCH_LIST" ]; then
-  exit 0
-fi
+main() {
+    git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
+}
 
-git branch -d ${BRANCH_LIST}
+git fetch --all && \
+main

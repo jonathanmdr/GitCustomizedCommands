@@ -32,7 +32,7 @@ git create-branch <nome-do-branch-que-deseja-criar>
 
 Deletando branches que já foram mergeados:
 ```sh
-git purge-branches
+git purge-branches master
 ```
 
 Exibindo a árvore do repositório com detalhes:

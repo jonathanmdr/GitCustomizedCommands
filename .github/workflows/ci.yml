@@ -18,9 +18,9 @@ jobs:
         
       - name: General Configurations
         run: |
-          apt-get update -y && \
-          apt-get install -y x-terminal-emulator && \
-          update-alternatives --config x-terminal-emulator
+          sudo apt-get update -y && \
+          sudo apt-get install -y x-terminal-emulator && \
+          sudo update-alternatives --config x-terminal-emulator
 
       - name: Test git-create-branch
         run: |

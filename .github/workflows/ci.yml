@@ -33,12 +33,7 @@ jobs:
 
       - name: Test git-purge-branches
         run: |
-          git config --global user.email "jonathan.mdr@hotmail.com"
-          git config --global user.name "Jonathan CI"
-
-          chmod +x ./git-purge-branches
-
-          sh ./git-purge-branches
+          sh ./git-purge-branches master
 
           if [[ $? -ne 0 ]]; then
             exit 1

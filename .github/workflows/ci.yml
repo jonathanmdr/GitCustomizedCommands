@@ -17,7 +17,10 @@ jobs:
         uses: actions/checkout@v2
         
       - name: General Configurations
-        run: update-alternatives --config x-terminal-emulator
+        run: |
+          apt-get update -y && \
+          apt-get install -y x-terminal-emulator && \
+          update-alternatives --config x-terminal-emulator
 
       - name: Test git-create-branch
         run: |
@@ -45,4 +48,4 @@ jobs:
 
       - name: Cleanup
         if: always()
-        run: git push origin --delete $BRANCH_NAME
+        run: git push origin --delete $BRANCH_NAME || true

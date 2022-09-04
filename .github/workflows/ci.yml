@@ -15,12 +15,6 @@ jobs:
     steps:
       - name: Setup
         uses: actions/checkout@v2
-        
-      - name: General Configurations
-        run: |
-          sudo apt-get update -y && \
-          sudo apt-get install -y x-terminal-emulator && \
-          sudo update-alternatives --config x-terminal-emulator
 
       - name: Test git-create-branch
         run: |

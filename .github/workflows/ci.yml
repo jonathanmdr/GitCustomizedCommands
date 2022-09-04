@@ -15,6 +15,11 @@ jobs:
     steps:
       - name: Setup
         uses: actions/checkout@v2
+        
+      - name: General configurations
+        run: |
+          git config --global user.email $USER
+          git config --global user.name $NAME
 
       - name: Test git-create-branch
         run: |

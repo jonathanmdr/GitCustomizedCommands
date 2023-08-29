@@ -4,12 +4,6 @@ set -e
 
 main() {
     local TARGET_BRANCH="$1"
-
-    if [ -z "$TARGET_BRANCH" ]; then
-        TARGET_BRANCH=master
-        echo "Assuming the principal branch name with the default value: '${TARGET_BRANCH}'"
-    fi
-
     git checkout -q "$TARGET_BRANCH" && \
     git for-each-ref refs/heads/ "--format=%(refname:short)" | while read -r branch; do mergeBase=$(git merge-base "$TARGET_BRANCH" "$branch") && \
     [[ $(git cherry "$TARGET_BRANCH" $(git commit-tree $(git rev-parse $branch\^{tree}) -p "$mergeBase" -m _)) == "-"* ]] && \
@@ -17,7 +11,12 @@ main() {
 }
 
 if [ -z "$1" ]; then
-    read -rp "Inform the principal branch name: (master/main) -> " branch
+    while [ -z "$branch" ]
+    do
+        read -rp "Inform the principal branch name: (master/main) -> " branch
+    done
+else
+    branch="$1"
 fi
 
 git fetch --all && \
